@@ -42,15 +42,9 @@ def main():
 
         })
     for switch in switch_list:
-        #print(switch['systemMacAddress'])
-        #b4:92:fe:68:e3:29
         today = datetime.today().strftime('%d-%m-%Y')
-
         filename = switch['hostname'] + '_' + today
-        print(filename)
         response = requests.get('https://www.cv-prod-euwest-2.arista.io/cvpservice/inventory/device/config?netElementId=' + switch['systemMacAddress'], headers=HEADERS)
-        #print(response.json()['output'])
-        #filename =
         f = open(CONFIG_DIR + '\\' + filename + '_config.txt', "w")
 
         f.write(response.json()['output'])

@@ -17,7 +17,6 @@ from datetime import datetime
 
 
 RPC_TIMEOUT = 30  # in seconds
-# token name =  'GuestEnrollmentAPI'
 TOKENKEY = 'KEY-xxxxxxx1'
 TOKENVALUE = '5cbe28xxxxxxxxxxxxxxxxxxxxxxxxxx'
 ORG_ID = 'E01934dea-cxxxxxxxxxxxxxxxxxxxxxxxxxx'
@@ -79,10 +78,9 @@ def GetAllUsers(cookie):
 def main():
     cookie = GetCookie()
     #AddUser(userinfo, cookie )
-    a = AddUser(userinfo, cookie)
-    print(a)
-    a = GetAllUsers(cookie)
-    print(a)
+    AddUser(userinfo, cookie)
+    GetAllUsers(cookie)
+
 
 
 if __name__ == '__main__':
